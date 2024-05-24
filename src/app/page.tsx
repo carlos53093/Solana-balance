@@ -29,10 +29,12 @@ export default function Home() {
   })
 
   return (
-    <div>
+    <div className="flex items-center flex-col space-y-4 w-full mt-[100px]">
       <WalletMultiButton />
-      <div>{wallet?.publicKey.toBase58()}</div>
-      <div>{(data ?? 0) / LAMPORTS_PER_SOL} SOL</div>
+      <div className="flex flex-col items-center space-y-4 rounded-md !mt-[50px] px-8 py-4 bg-slate-800 text-slate-100 shadow-[gray_3px_3px_5px_1px]">
+        <div>{wallet?.publicKey.toBase58()}</div>
+        <div>{(data ?? 0) / LAMPORTS_PER_SOL} SOL</div>
+      </div>
     </div>
   )
 }
